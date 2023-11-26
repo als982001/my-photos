@@ -61,6 +61,16 @@ a {
   text-decoration:none;
   color:inherit;
 }
+button {
+  appearance: none;
+  border: 0;
+  padding:0;
+  background-color: transparent;
+  border-radius: 0;
+}
+a, a:hover {
+  text-decoration: none;
+}
 `;
 
 export default GlobalStyle;

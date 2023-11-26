@@ -6,12 +6,11 @@ import { GrMapLocation } from "react-icons/gr";
 import { CiClock1 } from "react-icons/ci";
 import { PiDownloadSimple } from "react-icons/pi";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const Buttons = styled.section`
   width: 100%;
   display: grid;
-  grid-template-rows: repeat(1fr, 6);
+  grid-template-rows: repeat(1fr, 7);
 `;
 
 const Title = styled.h3`
@@ -48,10 +47,11 @@ interface IProps {
   buttonSize: string;
 }
 
-export default function PhotoButtons({ buttonSize }: IProps) {
+export default function PhotoButtons() {
   const navigate = useNavigate();
-
   const location = useLocation();
+
+  const buttonSize = "20px";
 
   return (
     <Buttons>
