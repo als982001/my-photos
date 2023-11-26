@@ -3,7 +3,13 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-import { Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import Imported from "./Pages/Imported";
+import Memories from "./Pages/Memories";
+import People from "./Pages/People";
+import Storage from "./Pages/Storage";
+import NotFound from "./Pages/NotFound";
+import Recent from "./Pages/Recent";
 
 const Wrapper = styled.section``;
 
@@ -18,7 +24,14 @@ function App() {
       <Header />
       <Contents>
         <Sidebar />
-        <Routes></Routes>
+        <Routes>
+          <Route path="/imported" element={<Imported />} />
+          <Route path="/memories" element={<Memories />} />
+          <Route path="/people" element={<People />} />
+          <Route path="/storage" element={<Storage />} />
+          <Route path="/notfound" element={<NotFound />} />
+          <Route path="/recent" element={<Recent />} />
+        </Routes>
       </Contents>
     </Wrapper>
   );
