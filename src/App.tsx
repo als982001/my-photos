@@ -10,8 +10,17 @@ import People from "./Pages/People";
 import Storage from "./Pages/Storage";
 import NotFound from "./Pages/NotFound";
 import Recent from "./Pages/Recent";
+import Location from "./Pages/Location";
+import MyAlbum from "./Pages/MyAlbum";
+import SharedAlbum from "./Pages/SharedAlbum";
+import MediaType from "./Pages/MediaType";
+import MyProject from "./Pages/MyProject";
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+`;
 
 const Contents = styled.section``;
 
@@ -22,16 +31,21 @@ function App() {
   return (
     <Wrapper>
       <Header />
+      <Sidebar />
       <Contents>
-        <Sidebar />
         <Routes>
           <Route path="/imported" element={<Imported />} />
           <Route path="/memories" element={<Memories />} />
           <Route path="/people" element={<People />} />
           <Route path="/storage" element={<Storage />} />
+          <Route path="/location" element={<Location />} />
           <Route path="/notfound" element={<NotFound />} />
-          <Route path={"/recent"} element={<Recent />} />
-          <Route path={"/"} element={<Recent />} />
+          <Route path="/myalbum" element={<MyAlbum />} />
+          <Route path="/shared" element={<SharedAlbum />} />
+          <Route path="/mediatype" element={<MediaType />} />
+          <Route path="/myproject" element={<MyProject />} />
+          <Route path="/recent" element={<Recent />} />
+          <Route path="/" element={<Recent />} />
         </Routes>
       </Contents>
     </Wrapper>
