@@ -4,6 +4,7 @@ import useCheckWidth from "../Hooks/useCheckWidth";
 import CircleButtons from "./Global/CircleButtons";
 import PhotoButtons from "./Sidebar/PhotoButtons";
 import AlbumButtons from "./Sidebar/AlbumButtons";
+import ProjectButtons from "./Sidebar/ProjectButtons";
 
 const Container = styled.aside<{ overHalf: boolean }>`
   width: 235px;
@@ -23,6 +24,7 @@ export default function Sidebar() {
       <CircleButtons />
       <PhotoButtons />
       <AlbumButtons />
+      <ProjectButtons />
     </Container>
   );
 }
