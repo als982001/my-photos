@@ -30,7 +30,8 @@ function App() {
           <Route path="/people" element={<People />} />
           <Route path="/storage" element={<Storage />} />
           <Route path="/notfound" element={<NotFound />} />
-          <Route path="/recent" element={<Recent />} />
+          <Route path={"/recent"} element={<Recent />} />
+          <Route path={"/"} element={<Recent />} />
         </Routes>
       </Contents>
     </Wrapper>
