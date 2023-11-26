@@ -11,6 +11,10 @@ import Storage from "./Pages/Storage";
 import NotFound from "./Pages/NotFound";
 import Recent from "./Pages/Recent";
 import Location from "./Pages/Location";
+import MyAlbum from "./Pages/MyAlbum";
+import SharedAlbum from "./Pages/SharedAlbum";
+import MediaType from "./Pages/MediaType";
+import MyProject from "./Pages/MyProject";
 
 const Wrapper = styled.section`
   width: 100vw;
@@ -36,8 +40,12 @@ function App() {
           <Route path="/storage" element={<Storage />} />
           <Route path="/location" element={<Location />} />
           <Route path="/notfound" element={<NotFound />} />
-          <Route path={"/recent"} element={<Recent />} />
-          <Route path={"/"} element={<Recent />} />
+          <Route path="/myalbum" element={<MyAlbum />} />
+          <Route path="/shared" element={<SharedAlbum />} />
+          <Route path="/mediatype" element={<MediaType />} />
+          <Route path="/myproject" element={<MyProject />} />
+          <Route path="/recent" element={<Recent />} />
+          <Route path="/" element={<Recent />} />
         </Routes>
       </Contents>
     </Wrapper>
