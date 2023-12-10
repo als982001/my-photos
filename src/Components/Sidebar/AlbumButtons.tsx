@@ -1,8 +1,11 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 import { FaAngleRight, FaAngleDown } from "react-icons/fa";
 import { IoIosAlbums } from "react-icons/io";
-import { useState } from "react";
+import styled from "styled-components";
+
+import { RootState } from "../../Redux/Stores";
+import { handleSelectAlbumType } from "../../Redux/Actions";
 
 const Buttons = styled.section`
   width: 100%;
@@ -60,23 +63,17 @@ const ButtonText = styled.h4`
 const buttonSize = "20px";
 
 export default function AlbumButtons() {
-  const [isOpen, setIsOpen] = useState({
-    mediatype: false,
-    shared: false,
-    myalbum: false,
-  });
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleClickOpenButton = (
-    buttonType: "mediatype" | "shared" | "myalbum",
-    open: boolean
-  ) => {
-    const result = { ...isOpen };
+  const albumState = useSelector(
+    (state: RootState) => state.albumSidebarReducer
+  );
 
-    result[buttonType] = open;
+  const dispatch = useDispatch();
 
-    setIsOpen((prev) => result);
+  const clickAlbumType = (key: string, value: boolean) => {
+    dispatch(handleSelectAlbumType(key, value));
   };
 
   return (
@@ -84,16 +81,16 @@ export default function AlbumButtons() {
       <Title>앨범</Title>
       <Row currentPage={location.pathname === "/mediatype"}>
         <OpenButton>
-          {isOpen.mediatype ? (
+          {albumState.mediatype ? (
             <FaAngleDown
               onClick={() => {
-                handleClickOpenButton("mediatype", false);
+                clickAlbumType("mediatype", false);
               }}
             />
           ) : (
             <FaAngleRight
               onClick={() => {
-                handleClickOpenButton("mediatype", true);
+                clickAlbumType("mediatype", true);
               }}
             />
           )}
@@ -105,16 +102,16 @@ export default function AlbumButtons() {
       </Row>
       <Row currentPage={location.pathname === "/shared"}>
         <OpenButton>
-          {isOpen.shared ? (
+          {albumState.shared ? (
             <FaAngleDown
               onClick={() => {
-                handleClickOpenButton("shared", false);
+                clickAlbumType("shared", false);
               }}
             />
           ) : (
             <FaAngleRight
               onClick={() => {
-                handleClickOpenButton("shared", true);
+                clickAlbumType("shared", true);
               }}
             />
           )}
@@ -126,16 +123,16 @@ export default function AlbumButtons() {
       </Row>
       <Row currentPage={location.pathname === "/myalbum"}>
         <OpenButton>
-          {isOpen.myalbum ? (
+          {albumState.myalbum ? (
             <FaAngleDown
               onClick={() => {
-                handleClickOpenButton("myalbum", false);
+                clickAlbumType("myalbum", false);
               }}
             />
           ) : (
             <FaAngleRight
               onClick={() => {
-                handleClickOpenButton("myalbum", true);
+                clickAlbumType("myalbum", true);
               }}
             />
           )}
