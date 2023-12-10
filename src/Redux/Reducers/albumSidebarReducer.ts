@@ -11,7 +11,6 @@ const albumSidebarReducer = (
   state: IAlbumSidebar = initialState,
   actions: any
 ) => {
-  console.log(actions);
   switch (actions.type) {
     case SELECT:
       return { ...state, [actions.payload.key]: actions.payload.value };
