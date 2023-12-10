@@ -25,10 +25,11 @@ const Icon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export default function Options() {
-  const { overHalf } = useCheckWidth();
+  const { overTwoThirds } = useCheckWidth();
 
   return (
     <Container>
@@ -46,7 +47,7 @@ export default function Options() {
           <AiOutlineRotateLeft size={23} />
         </Icon>
       </Icons>
-      {overHalf && <Search />}
+      {overTwoThirds && <Search />}
     </Container>
   );
 }

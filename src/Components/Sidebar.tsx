@@ -5,6 +5,7 @@ import CircleButtons from "./Global/CircleButtons";
 import PhotoButtons from "./Sidebar/PhotoButtons";
 import AlbumButtons from "./Sidebar/AlbumButtons";
 import ProjectButtons from "./Sidebar/ProjectButtons";
+import UploadImage from "./Sidebar/UploadImage";
 
 const Container = styled.aside<{ overHalf: boolean }>`
   width: 235px;
@@ -25,6 +26,7 @@ export default function Sidebar() {
       <PhotoButtons />
       <AlbumButtons />
       <ProjectButtons />
+      <UploadImage />
     </Container>
   );
 }

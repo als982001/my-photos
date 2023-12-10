@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const Sentence = styled.h2`
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
 `;
 

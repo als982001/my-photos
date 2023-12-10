@@ -8,7 +8,7 @@ const Container = styled.header<{ overHalf: boolean }>`
   position: absolute;
   top: 0;
   left: ${(props) => (props.overHalf ? " 235px" : "0")};
-  width: calc(100% - ${(props) => (props.overHalf ? "235px" : "0")});
+  width: ${(props) => (props.overHalf ? "calc(100% - 235px)" : "100%")};
   height: 50px;
   display: flex;
   justify-content: space-between;
