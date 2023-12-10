@@ -5,6 +5,7 @@ import { AiOutlineRotateLeft } from "react-icons/ai";
 
 import styled from "styled-components";
 import Search from "./Search";
+import useCheckWidth from "../../Hooks/useCheckWidth";
 
 const Container = styled.div`
   display: flex;
@@ -27,6 +28,8 @@ const Icon = styled.div`
 `;
 
 export default function Options() {
+  const { overHalf } = useCheckWidth();
+
   return (
     <Container>
       <Icons>
@@ -43,7 +46,7 @@ export default function Options() {
           <AiOutlineRotateLeft size={23} />
         </Icon>
       </Icons>
-      <Search />
+      {overHalf && <Search />}
     </Container>
   );
 }

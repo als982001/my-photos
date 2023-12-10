@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { RootState } from "../../Redux/Stores";
 import { useState } from "react";
 import { handleImageFull, handleImgPerRow } from "../../Redux/Actions";
+import CircleButtons from "../Global/CircleButtons";
 
 const Container = styled.div`
   display: flex;
@@ -56,7 +57,11 @@ const Icon = styled.div`
   cursor: pointer;
 `;
 
-export default function ImageResize() {
+interface IProps {
+  overHalf: boolean;
+}
+
+export default function ImageResize({ overHalf }: IProps) {
   const imageSizeState = useSelector(
     (state: RootState) => state.imageSizeReducer
   );
@@ -65,6 +70,7 @@ export default function ImageResize() {
 
   return (
     <Container>
+      {!overHalf && <CircleButtons />}
       <Icon
         onClick={() => {
           dispatch(handleImageFull(!imageSizeState.isFull));

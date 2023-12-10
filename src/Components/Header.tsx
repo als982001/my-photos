@@ -7,7 +7,7 @@ import Options from "./Header/Options";
 const Container = styled.header<{ overHalf: boolean }>`
   position: absolute;
   top: 0;
-  left: 235px;
+  left: ${(props) => (props.overHalf ? " 235px" : "0")};
   width: calc(100% - ${(props) => (props.overHalf ? "235px" : "0")});
   height: 50px;
   display: flex;
@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <Container overHalf={overHalf}>
-      <ImageResize />
+      <ImageResize overHalf={overHalf} />
       <Title />
       <Options />
     </Container>

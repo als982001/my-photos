@@ -8,6 +8,8 @@ export default function useCheckWidth() {
       const screenWidth = window.innerWidth;
 
       setOverHalf(window.screen.width / 2 <= screenWidth);
+
+      console.log(window.screen.width / 3 <= screenWidth);
     };
 
     handleResize();

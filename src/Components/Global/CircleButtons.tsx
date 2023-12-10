@@ -9,8 +9,8 @@ const Contaienr = styled.section`
 `;
 
 const Button = styled.button<{ bgColor: string }>`
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   border-radius: 100%;
   margin: 0 3px;
   background-color: ${(props) => props.bgColor};
